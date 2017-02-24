@@ -16,7 +16,7 @@ export let event = (trackingIdArg: string, appNameArg: string, eventCategoryArg:
 
 
 let send = async (requestBodyArg: string) => {
-    await plugins.smartrequest.post('http://www.google-analytics.com/collect', {
+    await plugins.smartrequest.post('https://www.google-analytics.com/collect', {
         requestBody: requestBodyArg
     })
 }
