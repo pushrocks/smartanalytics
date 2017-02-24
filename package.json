@@ -1,0 +1,21 @@
+{
+  "name": "smartanalytics",
+  "version": "1.0.0",
+  "description": "Google Analytics everywhere",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "(npmts)"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "smartq": "^1.1.1",
+    "smartrequest": "^1.0.4",
+    "typings-global": "^1.0.14"
+  },
+  "devDependencies": {
+    "smartchai": "^1.0.3",
+    "typings-test": "^1.0.3"
+  }
+}
