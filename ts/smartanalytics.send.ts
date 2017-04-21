@@ -5,13 +5,12 @@ export let event = (trackingIdArg: string, appNameArg: string, eventCategoryArg:
     `&tid=${trackingIdArg}` + // the tracking ID
     '&cid=555' +
     '&aip=1' + // anonymize the IP
-    `&an=${appNameArg}` + // appName
     '&t=event' +
     `&ec=${eventCategoryArg}` + // event category
     `&ea=${eventActionArg}` + // event action
     `&el=${eventLabelArg}` + // event label
     '&ev=300' +
-    `&an=${eventLabelArg}`
+    `&an=${appNameArg}`
   send(payload)
 }
 
