@@ -26,12 +26,15 @@ export class Analytics {
       identifier: identifierArg,
       analyticsData: analyticsDataArg
     }
-    let dataToSendJson = JSON.stringify(dataToSend)
+    console.log(dataToSend)
     await plugins.smartrequest.post(this.apiEndPoint, {
       headers: {
-        'authenticate': this.secretKey
+        'authenticate': this.secretKey,
+        'Content-Type': 'application/json'
       },
-      requestBody: dataToSendJson
+      requestBody: dataToSend
+    }).catch(err => {
+      console.log(err)
     })
   }
 }

@@ -8,16 +8,16 @@ tap.test('should create a valid AnalyticsAccount', async () => {
   testAnalytics = new smartanalytics.Analytics({
     projectArg: 'pushrocks',
     appNameArg: 'smartanalytics',
-    apiEndPointArg: 'pubapi-1.herokuapp.com/analytics'
+    apiEndPointArg: 'https://pubapi-1.herokuapp.com/analytics'
   })
 })
 
 tap.test('should send a request to Google Analytics', async () => {
   let doit = async () => {
-    await testAnalytics.recordEvent('npmtool', {
-      smoeValue: 'someData'
+    await testAnalytics.recordEvent('sandbox', {
+      someValue: 'someData'
     })
-    await testAnalytics.recordEvent('anotherTool', {
+    await testAnalytics.recordEvent('sandbox', {
       someValue: 'someData'
     })
   }
