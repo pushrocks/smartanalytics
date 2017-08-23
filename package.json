@@ -15,7 +15,6 @@
     "typings-global": "^1.0.14"
   },
   "devDependencies": {
-    "smartchai": "^1.0.3",
-    "typings-test": "^1.0.3"
+    "tapbundle": "^1.1.1"
   }
 }

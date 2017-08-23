@@ -1,1 +1,1 @@
-export { AnalyticsAccount } from './smartanalytics.classes.analyticsaccount';
+export { Analytics } from './smartanalytics.classes.analytics';

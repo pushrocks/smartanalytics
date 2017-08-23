@@ -1,27 +1,27 @@
-import 'typings-test'
+import { expect, tap } from 'tapbundle'
 
-import { expect } from 'smartchai'
+import * as smartanalytics from '../ts/index'
 
-import * as smartanalytics from '../dist/index'
+let testAnalytics: smartanalytics.Analytics
 
-let testAccount: smartanalytics.AnalyticsAccount
-
-describe('smartanalytics', function () {
-  it('should create a valid AnalyticsAccount', function () {
-    testAccount = new smartanalytics.AnalyticsAccount('smartanalytics', 'UA-92592300-1')
-  })
-
-  it('should send a request to Google Analytics', function () {
-    let doit = async () => {
-      await testAccount.sendEvent('npmtool', 'install', 'pushrocks/smartq')
-      await testAccount.sendEvent('npmtool', 'started', 'pushrocks/smartanalytics')
-      await testAccount.sendEvent('npmtool', 'install', 'pushrocks/smartq')
-      await testAccount.sendEvent('npmtool', 'started', 'pushrocks/smartanalytics')
-      await testAccount.sendEvent('npmtool', 'install', 'pushrocks/smartq')
-      await testAccount.sendEvent('npmtool', 'started', 'pushrocks/smartanalytics')
-      await testAccount.sendEvent('npmtool', 'install', 'pushrocks/smartq')
-      await testAccount.sendEvent('npmtool', 'started', 'pushrocks/smartanalytics')
-    }
-    doit()
+tap.test('should create a valid AnalyticsAccount', async () => {
+  testAnalytics = new smartanalytics.Analytics({
+    projectArg: 'pushrocks',
+    appNameArg: 'smartanalytics',
+    apiEndPointArg: 'pubapi-1.herokuapp.com/analytics'
   })
 })
+
+tap.test('should send a request to Google Analytics', async () => {
+  let doit = async () => {
+    await testAnalytics.recordEvent('npmtool', {
+      smoeValue: 'someData'
+    })
+    await testAnalytics.recordEvent('anotherTool', {
+      someValue: 'someData'
+    })
+  }
+  doit()
+})
+
+tap.start()
