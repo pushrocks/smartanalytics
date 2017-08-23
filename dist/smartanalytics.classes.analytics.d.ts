@@ -1,10 +1,10 @@
 export declare class Analytics {
-    project: string;
+    projectId: string;
     appName: string;
     apiEndPoint: string;
     secretKey: string;
     constructor(optionsArg: {
-        projectArg: string;
+        projectIdArg: string;
         appNameArg: string;
         apiEndPointArg: string;
         secretKeyArg?: string;

@@ -1,17 +1,17 @@
 import * as plugins from './smartanalytics.plugins'
 
 export class Analytics {
-  project: string
+  projectId: string
   appName: string
   apiEndPoint: string
   secretKey: string = ''
   constructor (optionsArg: {
-    projectArg: string
+    projectIdArg: string
     appNameArg: string
     apiEndPointArg: string
     secretKeyArg?: string
   }) {
-    this.project = optionsArg.projectArg
+    this.projectId = optionsArg.projectIdArg
     this.appName = optionsArg.appNameArg
     this.apiEndPoint = optionsArg.apiEndPointArg
     if (optionsArg.secretKeyArg) {
@@ -21,12 +21,11 @@ export class Analytics {
 
   async recordEvent (identifierArg: string, analyticsDataArg: any) {
     let dataToSend = {
-      project: this.project,
+      projectId: this.projectId,
       appName: this.appName,
       identifier: identifierArg,
       analyticsData: analyticsDataArg
     }
-    console.log(dataToSend)
     await plugins.smartrequest.post(this.apiEndPoint, {
       headers: {
         'authenticate': this.secretKey,

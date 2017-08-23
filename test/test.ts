@@ -6,9 +6,9 @@ let testAnalytics: smartanalytics.Analytics
 
 tap.test('should create a valid AnalyticsAccount', async () => {
   testAnalytics = new smartanalytics.Analytics({
-    projectArg: 'pushrocks',
+    projectIdArg: 'pushrocks',
     appNameArg: 'smartanalytics',
-    apiEndPointArg: 'https://pubapi-1.herokuapp.com/analytics'
+    apiEndPointArg: 'https://pubapi-1.lossless.one/analytics'
   })
 })
 
