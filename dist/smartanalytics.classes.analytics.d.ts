@@ -9,5 +9,5 @@ export declare class Analytics {
         apiEndPointArg: string;
         secretKeyArg?: string;
     });
-    recordEvent(identifierArg: string, analyticsDataArg: any): Promise<void>;
+    recordEvent(eventIdentifierArg: string, analyticsDataArg: any): Promise<void>;
 }

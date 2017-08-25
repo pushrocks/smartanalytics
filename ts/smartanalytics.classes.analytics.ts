@@ -19,11 +19,11 @@ export class Analytics {
     }
   }
 
-  async recordEvent (identifierArg: string, analyticsDataArg: any) {
+  async recordEvent (eventIdentifierArg: string, analyticsDataArg: any) {
     let dataToSend = {
       projectId: this.projectId,
       appName: this.appName,
-      identifier: identifierArg,
+      eventIdentifier: eventIdentifierArg,
       analyticsData: analyticsDataArg
     }
     await plugins.smartrequest.post(this.apiEndPoint, {
