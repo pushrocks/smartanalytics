@@ -6,24 +6,24 @@ export class Analytics {
   apiEndPoint: string
   secretKey: string = ''
   constructor (optionsArg: {
-    projectIdArg: string
-    appNameArg: string
-    apiEndPointArg: string
-    secretKeyArg?: string
+    projectId: string
+    appName: string
+    apiEndPoint: string
+    secretKey?: string
   }) {
-    this.projectId = optionsArg.projectIdArg
-    this.appName = optionsArg.appNameArg
-    this.apiEndPoint = optionsArg.apiEndPointArg
-    if (optionsArg.secretKeyArg) {
-      this.secretKey = optionsArg.secretKeyArg
+    this.projectId = optionsArg.projectId
+    this.appName = optionsArg.appName
+    this.apiEndPoint = optionsArg.apiEndPoint
+    if (optionsArg.secretKey) {
+      this.secretKey = optionsArg.secretKey
     }
   }
 
-  async recordEvent (eventIdentifierArg: string, analyticsDataArg: any) {
+  async recordEvent (eventIdArg: string, analyticsDataArg: any) {
     let dataToSend = {
       projectId: this.projectId,
       appName: this.appName,
-      eventIdentifier: eventIdentifierArg,
+      eventId: eventIdArg,
       analyticsData: analyticsDataArg
     }
     await plugins.smartrequest.post(this.apiEndPoint, {

@@ -6,9 +6,9 @@ let testAnalytics: smartanalytics.Analytics
 
 tap.test('should create a valid AnalyticsAccount', async () => {
   testAnalytics = new smartanalytics.Analytics({
-    projectIdArg: 'sandbox',
-    appNameArg: 'smartanalytics',
-    apiEndPointArg: 'https://pubapi-1.lossless.one/analytics'
+    projectId: 'sandbox',
+    appName: 'smartanalytics',
+    apiEndPoint: 'https://pubapi-1.lossless.one/analytics'
   })
 })
 
