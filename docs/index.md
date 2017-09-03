@@ -22,22 +22,35 @@ Google Analytics everywhere
 Use TypeScript for best in class instellisense.
 
 ### Why does this package exist?
-Tracking users in webapps is common. We use Google Analytics to gain insight in who is using what
-and where to spend resources for best efficiency.
+Tracking users in webapps is common, often to gain insight in who is using what and where to spend dev resources for best efficiency.
 
 Doing the same stuff in apps can be a bit of a hassle.
 Unnecessary dependencies used by many existing analytics tools make the whole app slow
 just to gain a little usage info.
-Say hello to smartanalytics.
-It features a very slim dependency tree using the native node request module to send posts to Google Analytics.
+
+**Say hello to smartanalytics. :)**
+It features a very slim dependency tree using the native node request module to send posts to a tracking API of your choice.
 
 ### How do I use this package?
 
 ```javascript
-import {AnalyticsAccount} from 'smartanalytics'
-let myAnalyticsAccount = new AnalyticsAccount('My App Name', 'UA-XXXXXX-Y')
-myAnalyticsAccount.sendEvent('npmtool', 'install', 'somelabel')
+import { Analytics } from 'smartanalytics'
+let myAnalytics = new plugins.smartanalytics.Analytics({
+  apiEndPoint: 'https://somepubapi.endpoint.com',
+  projectId: 'gitzone',
+  appName: 'npmts'
+})
+
+myAnalytics.recordEvent('someEvent', {
+    myKey1: 'myValue1',
+    myKey2: 'myValue2',
+    myDataKey3: 3
+  }).catch(err => {
+    console.log(err)
+  })
 ```
+
+
 
 For further information read the linked docs at the top of this README.
 
