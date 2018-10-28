@@ -1,6 +1,7 @@
 {
   "name": "@pushrocks/smartanalytics",
   "version": "2.0.13",
+  "private": false,
   "description": "Google Analytics everywhere",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,5 +23,4 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0"
   },
-  "private": true
 }
