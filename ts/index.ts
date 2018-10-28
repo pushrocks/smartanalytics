@@ -1,1 +1,1 @@
-export { Analytics } from './smartanalytics.classes.analytics'
+export { Analytics } from './smartanalytics.classes.analytics';

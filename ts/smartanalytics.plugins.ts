@@ -1,8 +1,7 @@
-import 'typings-global'
-import * as smartrequest from 'smartrequest'
-import * as smartq from 'smartq'
+import * as smartrequest from '@pushrocks/smartrequest';
+import * as smartpromise from '@pushrocks/smartpromise';
 
 export {
     smartrequest,
-    smartq
+    smartpromise
 }
